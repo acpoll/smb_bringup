@@ -118,7 +118,7 @@ def generate_launch_description():
             ),
             LaunchArg(
                 'serial',
-                default_value="'20010195'",
+                default_value="'20023237'",
                 description='FLIR serial number of camera (in quotes!!)',
             ),
             LaunchArg(
