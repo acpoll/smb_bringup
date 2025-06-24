@@ -144,11 +144,11 @@ def generate_launch_description():
     )
     
     local_planner_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([
+        FrontendLaunchDescriptionSource([
             PathJoinSubstitution([
                 FindPackageShare("local_planner"),
                 "launch",
-                "local_planner.launch.py"
+                "local_planner.launch"
             ])
         ]),
         launch_arguments={
