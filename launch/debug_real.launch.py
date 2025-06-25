@@ -247,9 +247,9 @@ def generate_launch_description():
     state_machine_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             PathJoinSubstitution([
-                FindPackageShare("smb_state_machine"),
+                FindPackageShare("smb_autonomous"),
                 "launch",
-                "state_machine.launch.py"
+                "autonomous_exploration_state_machine_launch.py"
             ])
         ),
     )
@@ -273,12 +273,12 @@ def generate_launch_description():
         local_odometry,
         static_tf_map_to_odom,
         static_tf_map_to_graph_msf,
-        # exploration_launch,
-        # far_planner_launch,
-        # local_planner_launch,
+        exploration_launch,
+        far_planner_launch,
+        local_planner_launch,
         twist_pid,
         config_topics,
         twist_mux,
-        # state_machine_launch,
+        state_machine_launch,
         # rviz2,
     ])
