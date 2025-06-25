@@ -165,6 +165,16 @@ def generate_launch_description():
             ])
         ]),
     )
+
+    state_machine_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            PathJoinSubstitution([
+                FindPackageShare("smb_autonomous"),
+                "launch",
+                "autonomous_exploration_state_machine_launch.py"
+            ])
+        ),
+    )
     
     twist_pid = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
@@ -215,6 +225,7 @@ def generate_launch_description():
         exploration_launch,
         local_planner_launch,
         far_planner_launch,
+        state_machine_launch,
         twist_pid,
         twist_mux,
         rviz2,
