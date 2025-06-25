@@ -244,6 +244,16 @@ def generate_launch_description():
         ),
     ) 
     
+    state_machine_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            PathJoinSubstitution([
+                FindPackageShare("smb_state_machine"),
+                "launch",
+                "state_machine.launch.py"
+            ])
+        ),
+    )
+    
     
     
     return LaunchDescription([
@@ -269,5 +279,6 @@ def generate_launch_description():
         twist_pid,
         config_topics,
         twist_mux,
+        # state_machine_launch,
         # rviz2,
     ])
